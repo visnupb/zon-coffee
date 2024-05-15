@@ -42,7 +42,7 @@ jobs:
       run: |
         helm pull oci://$ECR_REGISTRY/$ECR_HELM_REPOSITORY
     - name: Update kube config
-      run: aws eks update-kubeconfig --name my-cluster --region ${{ ap-south-1 }}
+      run: aws eks update-kubeconfig --name my-cluster --region ${{ 'ap-south-1' }}
     - name: Deploy helm package to EKS
       run: |
         helm install zon-coffee ./zon-coffee-helm-0.1.0.tgz
